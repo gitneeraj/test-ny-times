@@ -1,5 +1,6 @@
 import { type SnackbarOrigin } from '@mui/material'
 import { type ReactNode } from 'react'
+import { type PostsResponse } from './services'
 
 export type SnackbarPayload = {
   show: boolean
@@ -11,4 +12,8 @@ export type SnackbarPayload = {
 
 export type CommonInitialState = {
   snackbar: SnackbarPayload
+}
+
+export type PostsInitialState = {
+  posts: PostsResponse | null
 }

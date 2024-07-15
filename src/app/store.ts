@@ -4,12 +4,14 @@ import { rtkQueryErrorLogger } from './error'
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { api } from '@/app/services/api'
 import common from '../app/features/commonSlice'
+import posts from '../app/features/postsSlice'
 
 export const createStore = (options?: ConfigureStoreOptions['preloadedState'] | undefined) =>
   configureStore({
     reducer: {
       [api.reducerPath]: api.reducer,
       common,
+      posts,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(api.middleware, rtkQueryErrorLogger),

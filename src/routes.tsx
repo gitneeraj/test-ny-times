@@ -14,7 +14,7 @@ export default createBrowserRouter([
         Component: Posts,
       },
       {
-        path: 'posts/:id',
+        path: 'post/:id',
         Component: PostDetails,
       },
     ],

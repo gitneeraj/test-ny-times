@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import { CssBaseline } from '@mui/material'
 
 import router from './routes'
+import './styles/index.css'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
 
