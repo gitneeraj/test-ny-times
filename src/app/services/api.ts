@@ -1,22 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { type RootState } from '../store'
 
 // Create our baseQuery instance
 const baseQuery = fetchBaseQuery({
   baseUrl: process.env.REACT_APP_BASE_API_URL,
-  // timeout: 5000,
-  prepareHeaders: (headers, { getState }) => {
-    // By default, if we have a token in the store, let's use that for authenticated requests
-    const token = (getState() as RootState).auth.token
-    if (token) {
-      headers.set('Authorization', `Bearer ${token}`)
-    }
-
-    // set language
-    headers.set('Accept-Language', `${window.localStorage.getItem('i18nextLng') ?? 'en'}`)
-
-    return headers
-  },
+  timeout: 15000,
 })
 
 /**
