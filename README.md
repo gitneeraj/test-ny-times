@@ -53,3 +53,4 @@ The application will run default in Port 3000. Access it via web browser at http
 - `lint`: Lints JavaScript/TypeScript files.
 - `lint:fix`: Uses ESLint to fix any potential problems.
 - `format`: Formats code using prettier
+- `cypress`: Executes Cypress E2E tests
