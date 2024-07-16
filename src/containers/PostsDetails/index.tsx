@@ -44,7 +44,7 @@ export default function PostDetails() {
       </Stack>
 
       <Card sx={{ border: 'none', boxShadow: 'none' }}>
-        <Typography variant='h3' component='h2' sx={{ fontSize: { xs: '24px', md: '42px' } }}>
+        <Typography variant='h3' component='h1' sx={{ fontSize: { xs: '24px', md: '42px' } }}>
           {post?.title}
         </Typography>
         <Typography variant='h6' component='h2' fontStyle='italic' fontSize='14px' mb={2}>

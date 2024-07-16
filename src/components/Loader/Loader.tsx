@@ -16,7 +16,7 @@ export default function Loader() {
 
   return (
     <Backdrop sx={{ color: 'primary.contrastText', zIndex: 9999 }} open={isLoading}>
-      <CircularProgress color='inherit' />
+      <CircularProgress data-testid='loader' color='inherit' />
     </Backdrop>
   )
 }

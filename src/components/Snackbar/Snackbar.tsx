@@ -31,7 +31,7 @@ export default function SnackBar() {
         onClose={handleClose}
         severity={snackbar?.type}
         variant='filled'
-        sx={{ width: '100%', alignItems: 'center', '& .MuiAlert-action': '0 0 0 16px' }}
+        sx={{ width: '100%', alignItems: 'center' }}
       >
         {snackbar?.message}
       </Alert>

@@ -1,15 +1,17 @@
 import { renderWithProviders } from '@/app/test-utils'
-import Posts from '../Posts'
 import { screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+import Error from '../Error'
 
-describe('Posts', () => {
+describe('Error Component', () => {
   it('should render', () => {
     renderWithProviders(
       <MemoryRouter>
-        <Posts />
+        <Error />
       </MemoryRouter>,
     )
-    expect(screen.getByText(/posts/i)).toBeInTheDocument()
+    const headingLevel1 = screen.getByRole('heading', { level: 1 })
+    expect(headingLevel1).toBeInTheDocument()
+    expect(screen.getByText('404')).toBeInTheDocument()
   })
 })

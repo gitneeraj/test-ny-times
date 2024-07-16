@@ -20,7 +20,7 @@ export default function AppCard({ data }: AppCardProps) {
           alt={data?.abstract}
         />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='div' sx={numberOfLines(2)}>
+          <Typography gutterBottom variant='h5' component='h2' sx={numberOfLines(2)}>
             {data?.title}
           </Typography>
           <Typography variant='body2' color='text.secondary' sx={numberOfLines(2)}>
