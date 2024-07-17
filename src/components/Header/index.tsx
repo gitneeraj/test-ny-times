@@ -15,8 +15,7 @@ export default function Header() {
               component='div'
               sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 1 }}
             >
-              <img src='/logo.png' alt='NY logo' />
-              NY Times
+              <img src='/logo.png' alt='NY logo' /> NY Times
             </Typography>
           </Link>
         </Toolbar>
