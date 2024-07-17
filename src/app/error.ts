@@ -8,7 +8,6 @@ export const rtkQueryErrorLogger: Middleware = (api: MiddlewareAPI) => (next) =>
     const code = action?.payload?.data?.code ? action?.payload?.data?.code + ': ' : ''
     const message = `${code} ${error}`
 
-    // TODO: make `show: true` once BE is fixed
     api.dispatch(setSnackbar({ show: true, message, type: 'error' }))
   }
 
