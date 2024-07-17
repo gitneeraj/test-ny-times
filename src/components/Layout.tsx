@@ -1,4 +1,4 @@
-import { Outlet, ScrollRestoration } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import SnackBar from './Snackbar/Snackbar'
 import { Box } from '@mui/material'
 import Loader from './Loader/Loader'
@@ -15,7 +15,6 @@ export default function Layout() {
         <Outlet />
       </Box>
       <Footer />
-      <ScrollRestoration />
     </>
   )
 }
