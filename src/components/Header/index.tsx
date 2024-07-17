@@ -10,7 +10,12 @@ export default function Header() {
       <AppBar position='static'>
         <Toolbar>
           <Link to='/' style={{ color: 'white' }}>
-            <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+            <Typography
+              variant='h6'
+              component='div'
+              sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 1 }}
+            >
+              <img src='/logo.png' alt='NY logo' />
               NY Times
             </Typography>
           </Link>
