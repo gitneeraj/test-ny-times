@@ -2,7 +2,7 @@ import { renderWithProviders } from '@/app/test-utils'
 import { screen } from '@testing-library/react'
 import { MemoryRouter, useParams } from 'react-router-dom'
 import PostDetails from '../PostsDetails'
-import { DEFAULT_IMAGE } from '@/constants/global'
+import { DEFAULT_IMAGE, PENDING_TEXT } from '@/constants/global'
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -111,6 +111,31 @@ describe('Posts Details', () => {
     expect(displayedImage.src).toContain(DEFAULT_IMAGE)
   })
 
+  it('should render default image if correct image format is not present', () => {
+    ;(useParams as jest.Mock).mockReturnValue({ id: '100000009510003' })
+
+    renderWithProviders(
+      <MemoryRouter>
+        <PostDetails />
+      </MemoryRouter>,
+      {
+        preloadedState: {
+          posts: {
+            posts: {
+              ...mockData,
+              results: [
+                { ...mockData.results[0], media: [{ format: 'Standard Thumbnail', url: 'test' }] },
+              ],
+            },
+          },
+        },
+      },
+    )
+
+    const displayedImage = document.querySelector('img') as HTMLImageElement
+    expect(displayedImage.src).toContain(DEFAULT_IMAGE)
+  })
+
   it('should render 404', () => {
     ;(useParams as jest.Mock).mockReturnValue({ id: '000-000' })
 
@@ -122,5 +147,18 @@ describe('Posts Details', () => {
     )
 
     expect(screen.getByText(/404/i)).toBeInTheDocument()
+  })
+
+  it('should render empty', () => {
+    ;(useParams as jest.Mock).mockReturnValue({ id: '000-000' })
+
+    renderWithProviders(
+      <MemoryRouter>
+        <PostDetails />
+      </MemoryRouter>,
+      { preloadedState: { api: { queries: { test: { status: PENDING_TEXT } } } } },
+    )
+
+    expect(screen.queryByText(/404/i)).toBeNull()
   })
 })

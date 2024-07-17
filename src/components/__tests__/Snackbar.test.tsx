@@ -25,7 +25,9 @@ describe('Snackbar Component', () => {
       </MemoryRouter>,
       {
         preloadedState: {
-          common: { snackbar: { show: true, message: 'test message', type: 'success' } },
+          common: {
+            snackbar: { show: true, message: 'test message', type: 'success', autoHide: false },
+          },
         },
       },
     )

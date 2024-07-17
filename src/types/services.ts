@@ -2,7 +2,7 @@ export type PostsPayload = {
   duration?: number
 }
 
-type MediaMetadata = {
+export type MediaMetadata = {
   url: string
   format: string
   height: number

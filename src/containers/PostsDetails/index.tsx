@@ -3,6 +3,7 @@ import { useGetPostsQuery } from '@/app/services/posts'
 import { useAppSelector } from '@/app/store'
 import Error from '@/components/Error'
 import { CONTAINER_MAX_WIDTH, DEFAULT_IMAGE } from '@/constants/global'
+import { getPostDetailsImage } from '@/helpers/general'
 import { ArrowBack, Circle } from '@mui/icons-material'
 import {
   Card,
@@ -52,7 +53,7 @@ export default function PostDetails() {
         </Typography>
         <CardMedia
           component='img'
-          image={post?.media?.[0]?.['media-metadata']?.[1]?.url ?? DEFAULT_IMAGE}
+          image={getPostDetailsImage(post?.media?.[0]?.['media-metadata']) ?? DEFAULT_IMAGE}
           title={post?.title}
         />
         {post?.media?.[0]?.copyright && (
