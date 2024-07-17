@@ -9,7 +9,7 @@ import { numberOfLines } from '@/helpers/general'
 
 export type AppCardProps = { data: Result }
 
-export default function AppCard({ data }: AppCardProps) {
+export default function AppCard({ data }: Readonly<AppCardProps>) {
   return (
     <Card sx={{ maxWidth: 345, minHeight: '350px' }}>
       <CardActionArea sx={{ height: '100%' }}>
